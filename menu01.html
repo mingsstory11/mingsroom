@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴판 하나씩 내려오기</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: #000;}
+
+    nav{
+      width: 100%;
+      background-color: #000;
+    }
+    .gnb{
+      display: flex;
+      /* gap: 80px; */
+      width: 880px;
+      margin: 0 auto;
+    }
+    .gnb>li{
+      text-align: center;
+      width: 220px;
+      /* height: 70px; */
+      line-height: 70px;
+      position: relative;
+    }
+    .gnb>li>a{
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .gnb>li .sub{
+      display: none;
+      /* 날리는작업----------- */
+      line-height: 45px;
+      border: 1px solid  rgb(168, 168, 168);
+      position: absolute;
+      left: 0; top: 70px;
+    }
+    /* .gnb>li:hover .sub{display: block;} */
+
+    .gnb>li .sub>li{width: 220px;}
+
+    .gnb>li .sub li:hover{
+      background-color: rgb(193, 193, 193);
+      color: #2c21f6;
+    }
+    .gnb>li>a:hover{
+      background-color: rgb(168, 168, 168);
+    }
+    .gnb a{
+      /* 글자가 아닌 근처에만 가도 선택이 되도록 블럭처리해준다 */
+      display: block;
+      /* 부모에게 상속받는다.컬러일 경우만 해당된다 */
+      color: inherit;
+    }
+    
+    .content{
+      width: 1200px;
+      height: 500px;
+      background-color: rgb(254, 217, 245);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+      border-radius: 20px;
+    }
+    .content h1{
+      margin-bottom: 20px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    // 마우스를 올렸을 때 슬라이드 내려줘---------------------
+    $(document).ready(function(){
+      $(".gnb>li").mouseenter(function(){
+        $(this).children(".sub").stop().slideDown();
+      });
+
+// 마우스를 올렸을 때 슬라이드 올려줘---------------------
+      $(".gnb>li").mouseleave(function(){
+        $(this).children(".sub").stop().slideUp();
+      })
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="gnb">
+        <li>
+          <a href="#">회사소개</a>
+          <ul class="sub">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">CEO 인사말</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는 길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">사업분야</a>
+          <ul class="sub">
+            <li><a href="#">웹 개발</a></li>
+            <li><a href="#">웹 퍼블리싱</a></li>
+            <li><a href="#">UX/UI디자인</a></li>
+            <li><a href="#">유지보수</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">포트폴리오</a>
+          <ul class="sub">
+            <li><a href="#">웹사이트</a></li>
+            <li><a href="#">모바일</a></li>
+            <li><a href="#">쇼핑몰</a></li>
+            <li><a href="#">랜딩페이지</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">고객지원</a>
+          <ul class="sub">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">자료실</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <h1>jQuery Menu Slide</h1>
+      <p>
+        상단 메뉴를 클릭해 보세요.
+        서브메뉴가 slideDown() 효과로 나타납니다.
+      </p>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

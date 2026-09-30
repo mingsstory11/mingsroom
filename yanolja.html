@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>야놀자 gnb sub </title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: #000;}
+
+    .head{
+      width: 100%;
+      height: 96px;
+      background-color: #fff;
+    }
+    .head-wrap{
+      width: 1250px;
+      height: 96px;
+      margin: 0 auto;
+      display: flex;
+      /* background-color: aqua; */
+      padding-top: 30px;
+      box-sizing: border-box;
+    }
+    .head-wrap img{
+      width: 140px;
+      height: 32px;
+    }
+    .head .nav{ 
+      /* 전체적인 메뉴를 가로정렬해줄거야 */
+      display: flex;
+      justify-content: space-around;
+      /* background-color: blue; */
+      width: 1600px;
+    }
+    .head .nav>li{
+      /* width: 0px; */
+      font-weight: bold;
+      line-height: 30px;
+      position: relative;
+    }
+    .head .head-wrap .nav>li .sub{
+      /* 안보이게 해줘 */
+      display: none;
+      /* 줄바꿈하지말고 한줄로 보여줘 */
+      white-space: nowrap;
+      margin-top: 36px;
+      padding: 10px 30px;
+      background-color: #fff;
+      border-radius: 0 0 10px 10px;
+      position: absolute;
+      /* 내상자의 50프로를 기준으로 주고 50을 땡겨올거야  */
+      left: 50%;
+      transform: translateX(-50%);  
+    }
+    .head .head-wrap .sub>li>a{
+      color: rgb(211, 213, 213);
+    }
+
+    .head .head-wrap .nav>li .sub a:hover{
+      color: rgb(125, 124, 124);
+    }
+
+
+    .hero-bg{
+      background-image: url(bg.jpg);
+      background-size: cover;
+      height: 700px;
+    }
+    .hero-bg .bg-txt{
+      width: 1250px;
+      margin: 0 auto;
+      padding-top: 90px;
+    }
+    .hero-bg h1{
+      font-size: 80px;
+      color: rgb(249, 244, 236);
+    }
+    .hero-bg p{
+      font-size: 20px;
+      margin-top: 30px;
+      line-height: 30px;
+      color: rgb(249, 244, 236);
+    }
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".nav>li").mouseenter(function(){
+        $(this).children(".sub").stop().slideDown();
+      });
+
+      $(".nav>li").mouseleave(function(){
+        $(this).children(".sub").stop().slideUp();
+      });
+    })
+  </script>
+</head>
+<body>
+  <header>
+    <div class="head">
+      <div class="head-wrap">
+        <img src="yanolja-logo.svg" alt="야놀자로고">
+        <ul class="nav">
+          <li>
+            <a href="#">Who We Are</a>
+            <ul class="sub">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Brand Center</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">What We Do</a>
+            <ul class="sub">
+              <li><a href="#">Cloud Hospitality Solution</a></li>
+              <li><a href="#">Transaction Solution</a></li>
+              <li><a href="#">Ai-Powered Data Solution</a></li>
+              <li><a href="#">Consumer Platform</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Media</a>
+            <ul class="sub">
+              <li><a href="#">Press Release</a></li>
+              <li><a href="#">Media Coverage</a></li>
+              <li><a href="#">Awards</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Research</a>
+            <ul class="sub">
+              <li><a href="#">Research</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Career</a>
+            <ul class="sub">
+              <li><a href="#">Apply</a></li>
+              <li><a href="#">Work & Life</a></li>
+              <li><a href="#">Culture</a></li>
+              <li><a href="#">Yanolja Way</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">CSR</a>
+          </li>
+          <li>
+            <a href="#">Investors</a>
+          </li>
+          <li>
+            <a href="#">Ko</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="hero-bg">
+      <div class="bg-txt">
+        <h1>
+          Make Everyone's Travel<br>
+          Dreams a Reality
+        </h1>
+        <p>
+          여행 과정을 개인화하여<br>
+          여행자들이 꿈꾸는 여정에 한 걸음 더 다가갑니다.
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

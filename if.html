@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0921 if</title>
+</head>
+<body>
+  <!-- <h1 id="test1"></h1>
+  <h1 id="test2"></h1>
+  <h1 id="test"></h1>
+
+  <button onclick="sub()">눌러주세요!</button>
+  <h2 id="test"></h2>
+  <h1 id="test4">This is a heading.</h1>
+  <button type = "button" onclick = "func()">클릭하세요!</button> -->
+
+
+  <h3>덧셈 계산기</h3>
+  <form name="myform" action="..." method="POST">
+    첫번째 정수: <input type="text" id="x" /><br />
+    두번째 정수: <input type="text" id="y" /><br />
+
+    합계: <input type="text" id="sum" /><br />
+    <input type="button" value="계산" onclick="calc();" />
+  </form>
+
+
+
+  <script>
+
+  function calc(){
+    let x = document.getElementById("x").value;
+    let y = document.getElementById("y").value;
+    let sum;
+    sum = parseInt(x)+parseInt(y);
+    document.getElementById("sum").value = sum;
+  }
+
+
+  </script>
+</body>
+</html>

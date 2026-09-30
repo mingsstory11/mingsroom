@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xpressengine/xeicon@2.4.0/xeicon.min.css">
+  <title>성심당 gnb 만들어보기</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: #000;}
+
+
+    .top-gnb{
+      width: 100%;
+      height: 110px;
+      background-color: #000;
+      padding-top: 30px;
+      box-sizing: border-box;
+    }
+    .wrap{
+      width: 1350px;
+      /* background-color: aqua; */
+      margin: 0 40px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: 190px;
+    }
+    .wrap .logo{
+      width: 160px;
+      height: 64px;
+    }
+    .wrap-right .sns .box{
+      width: 100px;
+      height: 35px;
+      border: 1px solid #fff;
+      background-color: #fff;
+      border-radius: 13px;
+      padding-top: 7px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .wrap-right .sns .box a{
+      color: #000;
+      font-size: 15px;
+    }
+    .wrap-right .sns{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .wrap-right .sns a {
+      color: #fff;
+      font-size: 14px;
+    }
+    .wrap-right .sns a i {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+    .wrap-right .sns .link{
+      width: 1px;
+      height: 25px;
+      background-color: #8f8e8e;
+    }
+    .wrap-right .shop img{
+      width: 21px;
+      height: 18px;
+    }
+    .bot{
+      width: 100%;
+      height: 42px;
+      background-color: #000;
+    }
+
+    .bot .bot-nav{
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      border-top: 0.5px solid #cccccc;
+    }
+    .bot-nav>li{
+      text-align: center;
+      width: 240px;
+      line-height: 50px;
+      position: relative;
+    }
+    .bot-nav>li>a{
+      position: relative;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .bot-nav>li>a::after{
+      content: "";
+      display: block;
+
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+
+      width: 0%;
+      height: 2px;
+
+      border-bottom:2px solid rgb(200, 143, 69);
+      /* transform: scaleX(0); */
+      transition:all 1s;
+    }
+
+    .bot-nav>li>a:hover::after{
+      width: 100%;
+
+      left: 0;
+    }
+
+    .bot .bot-nav>li .sub{
+      display: none;
+      background-color: rgb(239, 237, 237);
+      position: absolute;
+      z-index: 9999;
+      left: 0; top: 41px;
+    }
+    
+    .bot-nav>li .sub>li{
+      width: 235px;
+    }
+    
+    .bot-nav>li .sub li:hover{
+      background-color: rgb(200, 143, 69);
+    }
+    .bot-nav>li .sub li:hover a{
+      color: #fff;
+    }
+    main img{
+      position: relative;
+      z-index: 99;
+      width:1424px ;
+    }
+
+
+
+
+
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".bot-nav>li").mouseenter(function(){
+        $(this).children(".sub").stop().slideDown();
+      });
+
+      $(".bot-nav>li").mouseleave(function(){
+        $(this).children(".sub").stop().slideUp();
+      });
+    });
+
+
+
+
+
+  </script>
+</head>
+<body>
+  <header>
+    <div class="top-gnb">
+      <div class="wrap">
+        <img class="logo" src="https://sungsimdang.co.kr/theme/responsive_sungsimdang/include/img/top_logo.svg" alt="메인로고">
+        <div class="wrap-right">
+          <ul class="sns">
+            <li class="box">
+              <a href="#">불편접수</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="xi-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="xi-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="xi-youtube-play"></i>
+              </a>
+              <a href="#">
+                <i class="xi-naver"></i>
+              </a>
+            </li>
+            <li class="link"></li>
+            <li>
+              <a href="#">인재채용</a>
+            </li>
+            <li class="link"></li>
+            <li class="shop">
+              <a href="#"><img src="https://sungsimdang.co.kr/theme/responsive_sungsimdang/include/img/h_shop_ico.svg" alt="쇼핑몰">
+                성심당 쇼핑몰</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bot">
+      <ul class="bot-nav">
+        <li>
+          <a href="#">ABOUT US</a>
+          <ul class="sub">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">연혁</a></li>
+            <li><a href="#">CI</a></li>
+            <li><a href="#">성심당이야기</a></li>
+            <li><a href="#">재무제표</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">OUR WAY</a>
+          <ul class="sub">
+            <li><a href="#">EoC(모두를 위한 경제)</a></li>
+            <li><a href="#">무지개 프로젝트</a></li>
+            <li><a href="#">에코성심 프로젝트</a></li>
+          </ul>
+        </li>
+        <li><a href="#">BRAND</a></li>
+        <li>
+          <a href="#">MEDIA HUB</a>
+          <ul class="sub">
+            <li><a href="#">성심당미디어</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">PRODUCT</a>
+          <ul class="sub">
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">제품별 성분표시</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <img src="main-bg.jpg" alt="메인배경">
+  </main>
+  <footer></footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전체메뉴 내려오기</title>
+  <style>
+  *{margin: 0; padding: 0;}
+  ul{list-style: none;}
+  a{text-decoration: none; color: inherit;}
+
+    header{
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid gray;
+      position: relative;
+    }
+    .header-inner{
+      width: 1200px;
+      height: 100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .gnb .main-menu{
+      display: flex;
+      gap: 60px;
+    }
+
+    .main-menu>li{
+      height: 100px;
+      line-height: 100px;
+    }
+
+    .main-menu>li:hover{
+      color: red;
+    }
+
+    .gnb .main-menu>li>a{
+      position: relative;
+    }
+    /* 글자 선택했을 떄 막대기-------------- */
+    .gnb .main-menu>li>a::after{
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      border-bottom: 3px solid red;
+      position: absolute;
+      top: 56px; left: 50%;
+      transition: all 0.3s;
+    }
+
+    .gnb .main-menu>li>a:hover::after{
+      width: 100%;
+      left: 0%;
+    }
+
+
+    .gnb .sub-menu-wrap{
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 100px; left: 0;
+      line-height: 2.4;
+      padding: 30px 0 40px;
+      border-top: 1px solid rgb(210, 210, 210);
+      border-bottom: 1px solid gray;
+      background-color: rgb(244, 242, 242);
+    }
+    .gnb:hover .sub-menu-wrap{
+      /* display: block; */
+    }
+
+    .gnb .sub-menu-wrap .sub-menu-inner{
+      display: flex;
+      justify-content: space-between;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gnb .sub-menu-wrap .sub-menu-inner .sub-menu{
+      border-left: 1px solid gray;
+      padding-left: 30px;
+    }
+    .gnb .sub-menu-wrap .sub-menu-inner .sub-menu:nth-child(1){
+      border-left: none;
+    }
+    .gnb .sub-menu-wrap .sub-menu-inner .sub-menu>li:hover{
+      text-decoration:underline;
+      color: red;
+    }
+
+
+
+    main{
+      width: 100%;
+      height: 500px;
+      background-color: rgb(190, 209, 237);
+      text-align: center;
+      padding-top: 100px;
+    }
+    main h2{
+      margin-bottom: 20px;
+    }
+
+
+
+
+  
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".gnb").mouseenter(function(){
+        $(".sub-menu-wrap").stop().slideDown();
+      });
+
+      $(".header-inner").mouseleave(function(){
+        $(".sub-menu-wrap").stop().slideUp();
+      });
+
+      
+    });
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1 class="logo">더조은아카데미</h1>
+      <nav class="gnb">
+        <ul class="main-menu">
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">사업분야</a></li>
+          <li><a href="#">홍보센터</a></li>
+          <li><a href="#">고객지원</a></li>
+        </ul>
+        <div class="sub-menu-wrap">
+          <div class="sub-menu-inner">
+            <ul class="sub-menu">
+              <li><a href="#">CEO인사말</a></li>
+              <li><a href="#">회사개요</a></li>
+              <li><a href="#">연혁</a></li>
+              <li><a href="#">오시는 길</a></li>
+            </ul>
+            <ul class="sub-menu">
+              <li><a href="#">사업소개</a></li>
+              <li><a href="#">주요사업</a></li>
+              <li><a href="#">사업실적</a></li>
+              <li><a href="#">미래사업</a></li>
+            </ul>
+            <ul class="sub-menu">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">보도자료</a></li>
+              <li><a href="#">홍보영상</a></li>
+              <li><a href="#">갤러리</a></li>
+            </ul>
+            <ul class="sub-menu">
+              <li><a href="#">자주 묻는 질문</a></li>
+              <li><a href="#">온라인 문의</a></li>
+              <li><a href="#">자료실</a></li>
+              <li><a href="#">고객센터</a></li>
+            </ul>
+          </div class="sub-wrap-inner">
+        </div>
+      </nav>
+    </div class="header-inner">
+  </header>
+  <main>
+      <h2>전체 서브메뉴 슬라이드 다운/업</h2>
+      <p>
+        메인메뉴에 마우스를 올려보세요.<br>
+        전체 서브메뉴가 아래로 펼쳐집니다.
+      </p>
+  </main>
+  <footer></footer>
+</body>
+</html>

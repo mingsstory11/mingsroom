@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 start</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    // $(document).ready(function(){
+    //   $("button").click(function(){
+    //     $("p").toggle();
+    //   })
+    // })
+
+
+    // $(document).ready(function(){
+    //   $("button").click(function(){
+    //     $("#div1").fadeIn();
+    //     $("#div2").fadeIn("slow");
+    //     $("#div3").fadeIn("3000");
+    //   });
+    // });
+
+    // $(document).ready(function(){
+    //   $("button").click(function(){
+    //     $("#div1").fadeOut();
+    //     $("#div2").fadeOut("solw");
+    //     $("#div3").fadeOut(2000);
+    //   })
+    // })
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#panel").slideUp("1000");
+      });
+    });
+  </script>
+  <style>
+    #panel, #flip{
+      padding: 5px;
+      text-align: center;
+      background-color: #e5eecc;
+      border: solid 1px #c3c3c3;
+    }
+    #panel{
+      padding: 50px;
+      /* display: none; */
+    }
+  </style>
+</head>
+<body>
+  <!-- <p style="background-color: antiquewhite; width: 350px; padding: 10px 20px;">
+    우리는 제이쿼리를 지금부터 시작합니다.<br>
+    잘 보입니다
+  </p>
+  <p>
+    지금의 내용은 계속 보일지 안 보일지 궁금합니다.
+  </p> -->
+  <!-- <p>지금부터 버튼을 만들건데, 잘 선택되는지 눌러보세요</p>
+
+  <button id="hide">Hide</button>
+  <button id="show">Show</button> -->
+  <!-- <button>이번에는 토글을 만들어볼게 잘 만들어지는지 살펴봐 버튼은 내용이 많으면 무한대로 늘어나니? 알아서 박스가 조절되는지 궁금해지네</button>
+
+  <p>오늘은 날씨가 좀 쌀쌀하더라</p>
+  <p>아우터를 챙겨입어</p>
+
+  <div id="div1" style="width:50px;height:50px;display:none;background-color:red;"></div><br>
+  <div id="div2" style="width:50px;height:50px;display:none;background-color:blue;"></div><br>
+  <div id="div3" style="width:50px;height:50px;display:none;background-color:green;"></div><br> -->
+  
+  <!-- <button>이번에는 페이드아웃을 만들어볼거야</button>
+  <div id="div1" style="width:50px;height:50px;background-color:blue;"></div>
+  <div id="div2" style="width:50px;height:50px;background-color:red;"></div>
+  <div id="div3" style="width:50px;height:50px;background-color:yellow;"></div> -->
+  
+  <div id="flip">여기보세요오옹</div>
+  <div id="panel">나도 조퇴하고싶어요오오ㅗㅇ</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>푸라닭 gnb 개인연습</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: #000;}
+
+
+    .head-bg{
+      width: 100%;
+      /* background-color: aqua; */
+      height: 130px;
+    }
+    .wrap-top{
+      width: 1200px;
+      height: 30px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: end;
+    }
+    .wrap-top p{
+      color: rgb(144, 144, 144);
+      font-size: 14px;
+      margin: 10px 10px;
+    }
+    .wrap-bot{
+      width: 1200px;
+      height: 100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #d7b67a;
+      /* background-color: rgb(106, 255, 0); */
+    }
+    .wrap-bot img{
+      /* 헤더메인로고 사이즈 지정해주기-------------- */
+      width: 152px;
+      height: 60px;
+    }
+    .wrap-bot .nav{
+      display: flex;
+      margin-left: 100px;
+      margin-right: 80px;
+      font-size: 1.1em;
+    }
+    .wrap-bot .nav>li{
+      text-align: center;
+      width: 160px;
+      line-height: 50px;
+      position: relative;
+    }
+    .wrap-bot .nav>li>a{
+      font-weight: bold;
+    }
+    .wrap-bot .nav>li>a:hover{
+      color: #d7b67a;
+    }
+    .wrap-bot .nav>li .sub{
+      display: none;
+      width: 130px;
+      font-size: 14px;
+      padding: 0 10px;
+      position: absolute;
+      left: 5px; top: 75px;
+      border: 1px solid #d7b67a;
+      background-color: rgb(237, 236, 230);
+    }
+    .wrap-bot .nav>li .sub>li{
+      border-bottom: 1px solid #d8d8d7;
+    }
+    .wrap-bot .nav>li .sub>li>a{
+      color: rgb(129, 129, 131);
+    }
+    .wrap-bot .nav>li .sub>li>a:hover{
+      color: #d7b67a;
+    }
+    
+
+
+
+
+
+
+    .wrap-bot .icon{
+      display: flex;
+    }
+    .wrap-bot .icon li{
+      background-color: #2a2a2a;
+      border: 1px solid #d7b67a;
+      border-radius: 15px;
+      padding: 4px 8px;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    .wrap-bot .icon li:nth-child(3){
+      background-color: #d7b67a;
+    }
+    .wrap-bot .icon li>a{
+      color: #fff;
+    }
+
+    .hero-bg img{
+      width: 1425px;
+      height: 650px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".nav>li").mouseenter(function(){
+        $(this).children(".sub").stop().slideDown();
+      });
+
+      $(".nav>li").mouseleave(function(){
+        $(this).children(".sub").stop().slideUp();
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="head-bg">
+      <div class="wrap-top">
+        <p>로그인</p>
+        <p>회원가입</p>
+      </div>
+      <div class="wrap-bot">
+        <img src="h1_logo.png" alt="로고">
+        <ul class="nav">
+          <li>
+            <a href="#">BRAND</a>
+            <ul class="sub">
+              <li><a href="#">푸라닭 소개</a></li>
+              <li><a href="#">푸라닭 컨셉</a></li>
+              <li><a href="#">수상내역</a></li>
+              <li><a href="#">푸라닭 BI</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">MENU</a>
+            <ul class="sub">
+              <li><a href="#">전체메뉴</a></li>
+              <li><a href="#">치킨메뉴</a></li>
+              <li><a href="#">사이드메뉴</a></li>
+              <li><a href="#">나만의 레시피</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">FRANCHISING</a>
+            <ul class="sub">
+              <li><a href="#">왜 푸라닭인가</a></li>
+              <li><a href="#">창업절차</a></li>
+              <li><a href="#">창업비용</a></li>
+              <li><a href="#">창업문의</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LOCATION</a></li>
+        </ul class="sub">
+        <ul class="icon">
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">GLOBAL</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="hero-bg">
+      <img src="puradak-bg.jpg" alt="">
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

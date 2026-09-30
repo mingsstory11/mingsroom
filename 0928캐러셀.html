@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐러셀 효과-자연스럽게</title>
+  <style>
+    *{margin: 0 ; padding: 0;}
+    ul{list-style: none;}
+
+    .carousel{
+      width: 1000px; margin: 80px auto;
+      height: 400px;
+      background-color: rgb(28, 104, 165);
+      overflow: hidden;
+      position: relative;
+    }
+    .wrap{display: flex;
+      margin-left: -1000px;}
+
+    .wrap>li{
+      width: 1000px; height: 400px;
+      font-size: 7em; text-align: center;
+      flex-shrink: 0;}
+
+    .wrap>li.bg1{background-color: rgb(140, 235, 16);}
+    .wrap>li.bg2{background-color: rgb(255, 252, 55);}
+    .wrap>li.bg3{background-color: rgb(242, 170, 70);}
+    .wrap>li.bg4{background-color: rgb(248, 88, 88);}
+
+    .carousel p{
+      width: 50px; height: 50px;
+      border-top: 3px solid black;
+      position: absolute;
+      top: 50%; cursor: pointer;
+    }
+    .carousel .prev{
+      border-left: 3px solid black;
+      left: 50px;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+    .carousel .next{
+      border-right: 3px solid black;
+      right: 50px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".next").click(function(){
+        $(".wrap").stop().animate({"margin-left":"-2000px"},500,function(){
+          // 이동해라
+          $(".wrap>li").first().appendTo(".wrap")
+          $(".wrap").css({"margin-left":"-1000px"});
+        });
+      });
+      $(".prev").click(function(){
+        $(".wrap").stop().animate({"margin-left":"0px"},500,function(){
+          $("wrap>li").last().prependTo(".wrap");
+          $(".wrap").css({"margin-left":"-1000px"});
+        });
+      });
+    });
+    
+  </script>
+</head>
+<body>
+  <div class="carousel">
+    <ul class="wrap">
+      <li class="bg1">001</li>
+      <li class="bg2">002</li>
+      <li class="bg3">003</li>
+      <li class="bg4">004</li>
+      <p class="prev"></p>
+      <p class="next"></p>
+    </ul>
+  </div>
+</body>
+</html>

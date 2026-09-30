@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0914 노티드 복습</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: black;}
+
+  header{
+    width: 100%;
+  }
+  .header-inner img{
+    width: 150px;
+    height: 80px;
+  }
+
+  .header-inner{
+    width: 1300px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+  }
+  .gnb .main-menu{
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+  }
+  .main-menu{
+    width: 800px;
+    height: 50px;
+    display: flex;
+    
+    gap: 30px;
+    background-color: blue;
+  }
+  /* .main-menu>li{
+    width: 110px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: blue;
+  } */
+  .main-menu>li>a{
+    position: relative;
+  }
+  .gnb .sub-menu-wrap{
+    /* display: none; */
+    width: 800px;
+    height: 170px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 85px; left: 280px;
+    background-color: blueviolet;
+  }
+
+  .sub-menu-inner{
+    display: flex;
+    /* width: 200px; */
+    gap: 30px;
+
+  }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="krotted_logo.png" alt="로고">
+      <nav class="gnb">
+        <ul class="main-menu">
+          <li><a href="#">Online Shop</a></li>
+          <li><a href="#">Reservation</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Event</a></li>
+          <li><a href="#">Brand</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="sub-menu-wrap">
+          <div class="sub-menu-inner">
+            <ul>
+              <li><a href="#">푸드</a></li>
+              <li><a href="#">리빙</a></li>
+              <li><a href="#">창고대방출</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">픽업 예약</a></li>
+              <li><a href="#">대량 주문</a></li>
+              <li><a href="#">매장안내</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">메뉴소개</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">이벤트</a></li>
+              <li><a href="#">공지사항</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">스토리</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">자주 묻는 질문</a></li>
+              <li><a href="#">1:1 문의</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">제안하기</a></li>
+              <li><a href="#">채용안내</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Cart</a></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main></main>
+  <footer></footer>
+</body>
+</html>

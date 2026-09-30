@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마몽드 캐러셀 만들어보기우우우</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: black;}
+
+
+/* -----헤더----------------- */
+    header{
+      width: 100%;
+      position: absolute;
+      left: 0; top: 0;
+      z-index: 99;
+    }
+    .head{
+      width: 1760px; height: 160px;
+      /* background-color: #fff; */
+    }
+    .head img{
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%);
+    }
+    .head-wrap{
+      display: flex;
+    }
+    .head-wrap .gnb{
+      display: flex;
+      position: absolute;
+      top: 120px; left: 50%;
+      transform: translateX(-50%);
+    }
+    .gnb>li{
+      width: 150px;
+      /* background-color: antiquewhite; */
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .head-wrap .right{
+      display: flex;
+      gap: 40px;
+      position: absolute;
+      top: 50px; right: 180px;
+    }
+    .right>li{
+      font-weight: 600;
+    }
+
+    /* -----메인 히어로----------------- */
+    .carousel{
+      width: 1920px;
+      height: 995px;
+      /* overflow: hidden; */
+      position: relative;
+    }
+    .wrap{
+      display: flex;
+      /* margin-left: -1920px; */
+    }
+    .wrap>li{
+      width: 1920px; height: 995px;
+      flex-shrink: 0;
+      /* position: relative; */
+    }
+    .carousel>.wrap>li h2{
+      font-size: 48px;
+      margin-top: 430px;
+      margin-left: 130px;
+    }
+    .carousel>.wrap>li .txt{
+      font-size: 1.4em;
+      font-weight: 600;
+      margin-top: 22px;
+      margin-left: 130px;
+    }
+    .wrap>li.bg1{
+      width: 1920px;
+      height: 995px;
+      background-image: url(mamon-img/main-hero1.jpeg);
+    }
+    .wrap>li.bg2{
+      width: 1920px;
+      height: 995px;
+      background-image: url(mamon-img/main-hero2.jpeg);
+    }
+    .wrap>li.bg3{
+      width: 1920px;
+      height: 995px;
+      background-image: url(mamon-img/main-hero3.jpeg);
+    }
+/* 
+    .wrap h2{
+      position: absolute;
+      top: 50%; left: 160px;
+      transform: translateY(-80%);
+      font-size: 50px;
+    }
+    .wrap p{
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: 55%; 
+      left: 160px;
+    } */
+    .wrap>li> .but{
+      font-size: 1.1em;
+      font-weight: 500;
+      width: 110px;
+      /* height: 0px; */
+      text-align: center;
+      padding: 13px 12px;
+      margin-left: 130px ;
+      margin-top: 55px;
+      /* top: 64%; left: 160px; */
+      border: 1px solid black;
+      /* padding: 20px; */
+    }
+
+
+    /* -----prev & next----------------- */
+    /* .hero .prev{
+      width: 100px;
+      height: 100px;
+      background-image: url(mamon-img/swiper-left.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 20px; top: 55%;
+      transform: translateY(-35%);
+    }
+    .hero .next{
+      width: 100px;
+      height: 100px;
+      background-image: url(mamon-img/swiper-right.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 20px; top: 55%;
+      transform: translateY(-35%);
+    } */
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="all">
+      <div class="head">
+        <img class="logo" src="mamon-img/logo-symbol.svg" alt="로고">
+        <div class="head-wrap">
+          <ul class="gnb">
+            <li>OUR STORY</li>
+            <li>BEST&NEW</li>
+            <li>PRODUCT</li>
+          </ul>
+          <ul class="right">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">매장찾기</a></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="carousel">
+      <ul class="wrap">
+        <li class="bg1">
+          <h2>플로라 글로우<br>로즈 리퀴드 마스크</h2>
+          <p class="txt">어느 각도에서나 매끈하게 빛나는 수분결광 피부</p>
+          <p class="but">자세히 보기</p>
+        </li>
+        <li class="bg2">
+          <h2>민트 포어 클리어<br>클렌징밤</h2>
+          <p class="txt">4중 피지부터 마스카라까지 말끔!<br>강력해진 모공피지 딥 클렌징바</p>
+          <p class="but">자세히 보기</p>
+        </li>
+        <li class="bg3">
+          <h2>카밍 샷 아줄렌<br>흔적 수분앰플</h2>
+          <p class="txt">수분은 깊게, 진정은 빠르게<br>트러블*흔적**까지 깔끔하게!</p>
+          <p class="but">자세히 보기</p>
+        </li>
+
+      </ul>
+      <p class="prev"></p>
+      <p class="next"></p>
+    </div>
+  </main>
+</body>
+</html>

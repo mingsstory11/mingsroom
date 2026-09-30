@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09/29 캐러셀 복습 낱개로 슬라이드</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+
+    .carousel{
+      width: 1000px;
+      height: 220px;
+      margin: 50px auto 0;
+      background-color: rgb(248, 229, 171);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .carousel .wrap{
+      width: 4000px;
+      margin-left: -1000px;
+    }
+    .wrap>li{
+      width: 1000px;
+      height: 220px;
+      float: left;
+    }
+    .wrap li{
+      width: 200px; height: 200px; float: left;
+      font-size: 3em; font-weight: bold;
+      text-align: center; color: #fff;
+      line-height: 200px;
+      margin: 10px 25px;
+    }
+
+
+    .wrap>li.bg1{background-color: rgb(252, 70, 70);}
+    .wrap>li.bg2{background-color: rgb(236, 106, 99);}
+    .wrap>li.bg3{background-color: rgb(246, 140, 140);}
+    .wrap>li.bg4{background-color: rgb(255, 168, 168);}
+
+    .wrap>li.bg5{background-color: rgb(255, 157, 0);}
+    .wrap>li.bg6{background-color: rgb(252, 170, 104);}
+    .wrap>li.bg7{background-color: rgb(249, 199, 145);}
+    .wrap>li.bg8{background-color: rgb(249, 219, 160);}
+    
+    .wrap>li.bg9{background-color: rgb(255, 251, 2);}
+    .wrap>li.bg10{background-color: rgb(250, 233, 51);}
+    .wrap>li.bg11{background-color: rgb(219, 250, 94);}
+    .wrap>li.bg12{background-color: rgb(119, 255, 95);}
+    
+    .wrap>li.bg13{background-color: rgb(27, 91, 254);}
+    .wrap>li.bg14{background-color: rgb(52, 170, 249);}
+    .wrap>li.bg15{background-color: rgb(83, 255, 212);}
+    .wrap>li.bg16{background-color: rgb(163, 247, 210);}
+
+    .carousel p{
+      width: 25px; height: 25px;
+      border-top: 3px solid black;
+      position: absolute;
+      top: 50%; cursor: pointer;
+    }
+    .carousel .prev{
+      border-left: 3px solid black;
+      left: 10px;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+    .carousel .next{
+      border-right: 3px solid black;
+      right: 10px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".next").click(function(){
+        $(".wrap").stop().animate({"margin-left":"-1250px"},500,function(){
+
+          $(".wrap>.li").first().appendTo(".wrap")
+          $(".wrap").css({"margin-left":"-1000px"});
+        });
+      });
+      $(".prev").click(function(){
+        $(".wrap").stop().animate({"margin-left":"750px"},500,function(){
+
+          $(".wrap>.li").last().prependTo(".wrap");
+          $(".wrap").css({"margin-left":"-1250px"});
+          
+        });
+      });
+    });
+
+
+
+
+  </script>
+
+
+</head>
+<body>
+  <div class="carousel">
+    <ul class="wrap">
+      <li class="bg1">001</li>
+      <li class="bg2">002</li>
+      <li class="bg3">003</li>
+      <li class="bg4">004</li>
+
+      <li class="bg5">005</li>
+      <li class="bg6">006</li>
+      <li class="bg7">007</li>
+      <li class="bg8">008</li>
+
+      <li class="bg9">009</li>
+      <li class="bg10">010</li>
+      <li class="bg11">011</li>
+      <li class="bg12">012</li>
+
+      <li class="bg13">013</li>
+      <li class="bg14">014</li>
+      <li class="bg15">015</li>
+      <li class="bg16">016</li>
+
+      <p class="prev"></p>
+      <p class="next"></p>
+    </ul>
+  </div>
+</body>
+</html>
